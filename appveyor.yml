@@ -9,8 +9,8 @@ install:
     - cmd: set PATH=C:\Program Files\Git\cmd;C:\cygwin64\bin;C:\Program Files (x86)\CMake\bin;C:\Windows\System32;C:\Windows\System32\wbem
 
     # Python
-    - cmd: curl --fail https://www.python.org/ftp/python/2.7.18/python-2.7.18.amd64.msi -o python.msi
-    - cmd: msiexec /a python.msi /qb TARGETDIR=C:\projects\saturn\python
+    - cmd: curl --fail https://www.python.org/ftp/python/3.8.3/python-3.8.3-amd64.exe -o python3-amd64.exe
+    - cmd: python3-amd64.exe /quiet InstallAllUsers=1 PrependPath=1 TargetDir=C:\projects\saturn\python
     - cmd: curl --fail https://bootstrap.pypa.io/get-pip.py -o get-pip.py
     - cmd: python\python.exe get-pip.py
     - cmd: python\python.exe -m pip install PySide PyOpenGL Jinja2
