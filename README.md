@@ -65,7 +65,7 @@ c:\usd\usd.cmd usdview c:\kitchen_set\Kitchen_set.usd
 
 #### Python requirements
 
-`usdview` requires [Python 2.7](https://www.python.org/downloads/) and several
+`usdview` requires [Python 3.8](https://www.python.org/downloads/) and several
 preinstalled python packages. After installing Python, you can install the
 packages with the following command:
 

@@ -296,7 +296,8 @@ qtextras: qt5declarative qt5graphicaleffects qt5quickcontrols qt5tools qt5multim
 .DEFAULT_GOAL := all
 
 ifeq "$(CURRENT_OS)" "windows"
-	PYTHON_BIN := C:/Python27/python.exe
+	# Python path from appveyor
+	PYTHON_BIN := C:/Python$(PYTHON_VERSION_SHORT)-x64/python.exe
 	PYTHON_ROOT := $(subst \,,$(dir $(PYTHON_BIN)))
 	PYTHON_ABSOLUTE := $(shell cygpath -u $(PYTHON_ROOT))
 	PYTHON_BIN := $(subst \,,$(PYTHON_BIN))
@@ -307,7 +308,7 @@ else
 	PYTHON_INCLUDE := $(shell $(PYTHON_BIN) -c "import sysconfig; print sysconfig.get_paths()['include']")
 	PYTHON_LIBS := $(shell $(PYTHON_BIN) -c "import sysconfig; print sysconfig.get_paths()['stdlib']")/..
 endif
-PYTHON_VERSION_SHORT := 2.7
+PYTHON_VERSION_SHORT := 3.8
 
 ifeq "$(BOOST_VERSION)" "1_55_0"
 BOOST_USERCONFIG := tools/build/v2/user-config.jam
