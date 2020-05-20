@@ -70,5 +70,5 @@ preinstalled python packages. After installing Python, you can install the
 packages with the following command:
 
 ```
-c:\usd\usd.cmd python -m pip install PySide PyOpenGL Jinja2
+c:\usd\usd.cmd python -m pip install PySide2 PyOpenGL Jinja2
 ```
