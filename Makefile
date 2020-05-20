@@ -100,11 +100,11 @@ $$($(1)_FILE) :
 ifeq "$$(CURRENT_OS)" "windows"
 	@mkdir -p $(ABSOLUTE_SOURCES_ROOT) && \
 	echo Downloading $$($(1)_FILE)... && \
-	curl --tlsv1.2 --retry-connrefused --retry 20 -s -o $$@ -L $$($(1)_SOURCE)
+	curl --fail --tlsv1.2 --retry-connrefused --retry 20 -s -o $$@ -L $$($(1)_SOURCE)
 else
 	@mkdir -p $(ABSOLUTE_SOURCES_ROOT) && \
 	echo Downloading $$($(1)_FILE)... && \
-	curl --tlsv1.2 -s -o $$@ -L $$($(1)_SOURCE)
+	curl --fail --tlsv1.2 -s -o $$@ -L $$($(1)_SOURCE)
 endif
 endef
 

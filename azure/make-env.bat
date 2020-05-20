@@ -48,19 +48,19 @@ setup-x86_64 --no-admin --root %SATURN_BASE%\cygwin --quiet-mode --no-shortcuts 
 set PATH=%PATH%;%SATURN_BASE%\cygwin\bin;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0
 
 echo Install jom
-curl --tlsv1.2 -o jom.tar.xz -L https://github.com/VictorYudin/saturn-jom/releases/download/1.0.5/jom-v1.1.2.tar.xz
+curl --fail --tlsv1.2 -o jom.tar.xz -L https://github.com/VictorYudin/saturn-jom/releases/download/1.0.5/jom-v1.1.2.tar.xz
 tar -xf jom.tar.xz
 set PATH=%PATH%;%SATURN_BASE%\jom\bin
 
 echo Install python
-curl https://www.python.org/ftp/python/2.7.13/python-2.7.13.amd64.msi -o python.msi
+curl --fail https://www.python.org/ftp/python/2.7.13/python-2.7.13.amd64.msi -o python.msi
 start /wait msiexec /a python.msi /qb TARGETDIR=%SATURN_BASE%\python
-curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+curl --fail https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 python\python.exe get-pip.py
 python\python.exe -m pip install PySide PyOpenGL Jinja2
 
 echo Downloading Maya Devkit
-curl --tlsv1.2 -o mayaDevkit.zip -L https://github.com/VictorYudin/saturn/releases/download/Maya2018Devkit/Maya2018-DEVKIT_Windows.zip
+curl --fail --tlsv1.2 -o mayaDevkit.zip -L https://github.com/VictorYudin/saturn/releases/download/Maya2018Devkit/Maya2018-DEVKIT_Windows.zip
 unzip -q mayaDevkit.zip
 rm -rf devkitBase/include/tbb
 rm -rf devkitBase/include/python2.7
