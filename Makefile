@@ -146,9 +146,9 @@ endef
 QT_VERSION := v5.11.2
 
 ifeq "$(CURRENT_OS)" "windows"
-$(eval $(call CURL_DOWNLOAD,cmake,3.9.1,https://cmake.org/files/v$$(word 1,$$(subst ., ,$$(cmake_VERSION))).$$(word 2,$$(subst ., ,$$(cmake_VERSION)))/cmake-$$(cmake_VERSION)-win64-x64.zip))
+$(eval $(call CURL_DOWNLOAD,cmake,3.17.2,https://cmake.org/files/v$$(word 1,$$(subst ., ,$$(cmake_VERSION))).$$(word 2,$$(subst ., ,$$(cmake_VERSION)))/cmake-$$(cmake_VERSION)-win64-x64.zip))
 else
-$(eval $(call CURL_DOWNLOAD,cmake,3.9.1,https://cmake.org/files/v$$(word 1,$$(subst ., ,$$(cmake_VERSION))).$$(word 2,$$(subst ., ,$$(cmake_VERSION)))/cmake-$$(cmake_VERSION).tar.gz))
+$(eval $(call CURL_DOWNLOAD,cmake,3.17.2,https://cmake.org/files/v$$(word 1,$$(subst ., ,$$(cmake_VERSION))).$$(word 2,$$(subst ., ,$$(cmake_VERSION)))/cmake-$$(cmake_VERSION).tar.gz))
 endif
 
 $(eval $(call CURL_DOWNLOAD,boost,1_61_0,http://sourceforge.net/projects/boost/files/boost/$$(subst _,.,$$(boost_VERSION))/boost_$$(boost_VERSION).tar.gz))
@@ -431,8 +431,7 @@ ifeq "$(CURRENT_OS)" "windows"
 	rm -rf $(ABSOLUTE_PREFIX_ROOT)/cmake && \
 	unzip $(ABSOLUTE_SOURCES_ROOT)/cmake-$(cmake_VERSION)-win64-x64.zip > $(ABSOLUTE_PREFIX_ROOT)/log_cmake.txt 2>&1 && \
 	mv cmake-$(cmake_VERSION)-win64-x64 $(ABSOLUTE_PREFIX_ROOT)/cmake && \
-	chmod -R u+x $(ABSOLUTE_PREFIX_ROOT)/cmake/bin/*.exe && \
-	chmod -R u+x $(ABSOLUTE_PREFIX_ROOT)/cmake/bin/*.dll && \
+	chmod u+x $(ABSOLUTE_PREFIX_ROOT)/cmake/bin/*.exe && \
 	cd $(THIS_DIR) && \
 	echo $(cmake_VERSION) > $@
 else
