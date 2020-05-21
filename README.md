@@ -72,4 +72,3 @@ packages with the following command:
 ```
 c:\usd\usd.cmd python -m pip install PySide PyOpenGL Jinja2
 ```
-
