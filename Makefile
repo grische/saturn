@@ -143,7 +143,7 @@ $$($(1)_VERSION_FILE) : $$($(4)_VERSION_FILE) $$($(1)_FILE)/HEAD
 	echo $$($(1)_VERSION) > $$@
 endef
 
-QT_VERSION := v5.11.2
+QT_VERSION := v5.14.2
 
 ifeq "$(CURRENT_OS)" "windows"
 $(eval $(call CURL_DOWNLOAD,cmake,3.17.2,https://cmake.org/files/v$$(word 1,$$(subst ., ,$$(cmake_VERSION))).$$(word 2,$$(subst ., ,$$(cmake_VERSION)))/cmake-$$(cmake_VERSION)-win64-x64.zip))
