@@ -70,5 +70,5 @@ deploy:
 
 test: off
 
-only_commits:
-    message: /build/
+#only_commits:
+#    message: /build/
