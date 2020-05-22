@@ -177,7 +177,7 @@ $(eval $(call GIT_DOWNLOAD,jsoncpp,1.8.4,git://github.com/open-source-parsers/js
 $(eval $(call GIT_DOWNLOAD,materialx,v1.37.0,git://github.com/materialx/MaterialX.git))
 $(eval $(call GIT_DOWNLOAD,oiio,Release-2.0.12,git://github.com/OpenImageIO/oiio.git))
 $(eval $(call GIT_DOWNLOAD,opensubd,v3_4_3,git://github.com/PixarAnimationStudios/OpenSubdiv.git))
-$(eval $(call GIT_DOWNLOAD,osl,912633af,git://github.com/imageworks/OpenShadingLanguage.git))
+$(eval $(call GIT_DOWNLOAD,osl,Release-1.11.2.0-dev,git://github.com/imageworks/OpenShadingLanguage.git))
 $(eval $(call GIT_DOWNLOAD,ptex,v2.3.0,git://github.com/wdas/ptex.git))
 $(eval $(call GIT_DOWNLOAD,pyside,${QT_VERSION},git://code.qt.io/pyside/pyside-setup.git))
 $(eval $(call GIT_DOWNLOAD,pysidetools,${QT_VERSION},git://code.qt.io/pyside/pyside-tools.git))
