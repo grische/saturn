@@ -1026,12 +1026,12 @@ $(osl_VERSION_FILE) : $(boost_VERSION_FILE) $(cmake_VERSION_FILE) $(llvm_VERSION
 		-DUSE_QT:BOOL=OFF \
 		-DVERBOSE=ON \
 		-DZLIB_ROOT="$(zlib_PREFIX)" \
-		.. > $(ABSOLUTE_PREFIX_ROOT)/log_osl.txt 2>&1 && \
+		&& \
 	$(CMAKE) \
 		--build . \
 		--target install \
 		--config $(CMAKE_BUILD_TYPE) \
-		$(CMAKE_MAKE_FLAGS) >> $(ABSOLUTE_PREFIX_ROOT)/log_osl.txt 2>&1 && \
+		&& \
 	cd $(THIS_DIR) && \
 	echo $(osl_VERSION) > $@
 
